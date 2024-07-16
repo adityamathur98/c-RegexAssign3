@@ -1,0 +1,171 @@
+Q1. using cpp solve digit sum where n = 1234, 1+2+3+4
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n = 1234;
+    int sumOfDigits = 0;
+
+    for (int i = n; i > 0; i /= 10)
+    {
+        sumOfDigits += i % 10;
+    }
+
+    cout << "The Sum of digit is " << sumOfDigits << endl;
+
+    return 0;
+}
+
+Q2. using cpp solve digit count where n=1224
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n = 1224;
+    int digitCount = 0;
+
+    for (int i = n; i > 0; i /= 10)
+    {
+        digitCount++;
+    }
+
+    cout << "The Number of Digit in Given Number is " << digitCount << endl;
+
+    return 0;
+}
+
+Q3. using cpp solve factorial of any value of n
+
+Ans. A.  #include <bits/stdc++.h>
+using namespace std;
+
+void factorial(int num)
+{
+    int factorialOfNum = 1;
+
+    for (int i = num; i >= 1; i--)
+    {
+        factorialOfNum *= i;
+    }
+
+    cout << "The Factorial of " << num << " is " << factorialOfNum << endl;
+};
+
+int main()
+{
+    // Method 1 Using For Function Call
+    int n = 5;
+    factorial(6);
+
+    return 0;
+}
+
+B.  #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    //  using cpp solve factorial of any value of n
+
+    // Method 1 Using For Loop
+    int n = 5;
+
+    int factorialOfNum = 1;
+
+    for (int i = n; i >= 1; i--)
+    {
+        factorialOfNum *= i;
+    }
+
+    cout << "The Factorial of " << n << " is " << factorialOfNum << endl;
+
+    return 0;
+}
+
+Q4. check if any number is armstrong or not
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int armstrongOrNot(int n)
+{
+    double sumOfCubeDigit = 0;
+
+    for (int i = n; i > 0; i /= 10)
+    {
+        double lastDigit = i % 10;
+        double exponent = 3;
+        sumOfCubeDigit += pow(lastDigit, exponent);
+    }
+
+    if (n == sumOfCubeDigit)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    int num = 153;
+
+    if (armstrongOrNot(num))
+    {
+        cout << num << " is Armstrong Number." << endl;
+    }
+    else
+    {
+        cout << num << " is not Armstrong Number." << endl;
+    }
+
+    return 0;
+}
+
+Q5. check if any number is pallindrome or not
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int checkPalindrone(int n)
+{
+    int reverseNum = 0;
+    for (int i = n; i > 0; i /= 10)
+    {
+        int lastDigit = i % 10;
+        reverseNum = reverseNum * 10 + lastDigit;
+    }
+
+    if (reverseNum == n)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    int num;
+    cout << "Enter Any Number: ";
+    cin >> num;
+
+    if (checkPalindrone(num))
+    {
+        cout << num << " is Palindrone Number" << endl;
+    }
+    else
+    {
+        cout << num << " is not a Palindrone Number" << endl;
+    }
+
+    return 0;
+}
